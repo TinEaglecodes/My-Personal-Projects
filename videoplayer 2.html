@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #videoPlayer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoPlayer">
+        <input type="file" id="fileInput" accept="video/*">
+        <video id="video" controls>
+            <source src="" type="video/mp4">
+            <source src="" type="video/x-matroska">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <button id="stop">Stop</button>
+            <button id="volumeUp">Volume +</button>
+            <button id="volumeDown">Volume -</button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const playButton = document.getElementById('play');
+        const pauseButton = document.getElementById('pause');
+        const stopButton = document.getElementById('stop');
+        const volumeUpButton = document.getElementById('volumeUp');
+        const volumeDownButton = document.getElementById('volumeDown');
+        const fileInput = document.getElementById('fileInput');
+
+        playButton.addEventListener('click', () => {
+            video.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            video.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        volumeUpButton.addEventListener('click', () => {
+            video.volume = Math.min(video.volume + 0.1, 1);
+        });
+
+        volumeDownButton.addEventListener('click', () => {
+            video.volume = Math.max(video.volume - 0.1, 0);
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                if (file.type === 'video/mp4' || file.type === 'video/x-matroska') {
+                    video.src = fileURL;
+                } else {
+                    alert('Unsupported file format. Please upload an MP4 or MKV video.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
