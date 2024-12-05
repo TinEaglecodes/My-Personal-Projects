@@ -1,0 +1,211 @@
+:root{
+    --background-light: #ffffff;
+    --text-light: #000000;
+    --background-dark: #121212;
+    --text-dark: #ffffff;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+  }
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+header{
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#video_container{
+    display: flex;
+    margin: 0 auto;
+    
+}
+video{
+    width: 700px;
+    height: 400px;
+    border: 2px solid;
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+input{
+    position: fixed;
+    top: 30px;
+    right: 10px;
+}
+#controls{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 2px 50px;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+output{
+    font-size: 20px;
+}
+button{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+#BtnPlay{
+    background-image: url("play.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    padding: 5px 12px;
+}
+#BtnPause{
+    background-image: url("pause.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    padding: 5px 12px;
+}
+#BtnStop{
+    background-image: url("stop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    padding: 5px 12px;
+}
+#Btnvolup{
+    background-image: url("volup.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    padding: 5px 12px;
+}
+#Btnvoldown{
+    background-image: url("voldown.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    padding: 5px 12px;
+}
+
+
+
+/* ____________________________________________________________________________________________________________________________________ */
+
+@media only screen and (max-width: 600px){
+    header{
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid black;
+        font-family: "Jaro", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+    }
+    .toggle-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 10px;
+        cursor: pointer;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+    }
+    input{
+        position: absolute;
+        bottom: 20px;
+        right: 20px
+    }
+    video{
+        width: 290px;
+        height: 200px;
+        border: 2px solid;
+        object-fit: cover;
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    button{
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    #BtnPlay{
+        background-image: url("play.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: white;
+        padding: 5px 12px;
+    }
+    #BtnPause{
+        background-image: url("pause.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: white;
+        padding: 5px 12px;
+    }
+    #BtnStop{
+        background-image: url("stop.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: white;
+        padding: 5px 12px;
+    }
+    #Btnvolup{
+        background-image: url("volup.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: white;
+        padding: 5px 12px;
+    }
+    #Btnvoldown{
+        background-image: url("voldown.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: white;
+        padding: 5px 12px;
+    }
+    #controls{
+        display: flex;
+        align-content: space-evenly;
+        margin-left: 10px;
+        width: max-content;
+    }
+    
+}
