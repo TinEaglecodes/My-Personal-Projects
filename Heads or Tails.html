@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads or Tails</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heads And Tails</h1>
+    <p id="Score"></p>
+    <button id="Heads" onclick='
+    UserChoice="Heads"
+    PickMove()
+    '>Heads</button>
+
+    <button id="Tails" onclick='
+    UserChoice="Tails"
+    PickMove()
+    '>Tails</button>
+    <button onclick="ResetScore()">Reset Score</button>
+    <p id="Output"></p>
+
+
+</body>
+<script>
+    
+    let UserChoice ="" 
+
+    Score={
+        Win:0,
+        loss:0
+    }
+    function PickMove(){
+        const NumberA= Math.random();
+        // pick computer move
+        if(NumberA >= 0.5){
+            ComputerChoice= "Heads"
+        }
+        else{
+            ComputerChoice= "Tails"
+        };
+        //check if guess was correct
+        if(UserChoice===ComputerChoice){
+            Score.Win=Score.Win+1
+        }
+        else{
+            Score.loss=Score.loss+1
+        }
+        //update score
+        document.getElementById("Score").innerHTML= "Wins:"+Score.Win + " Loss:" + Score.loss 
+        //show guesses
+        document.getElementById("Output").innerHTML= "You guessed<b> "+ UserChoice+ "</b>, Computer guessed<b> " + ComputerChoice+ "</b>."
+    }
+    function ResetScore(){
+        Score.Win= 0
+        Score.loss= 0
+        document.getElementById("Score").innerHTML= "Wins:"+ Score.Win + " loss:"+ Score.loss
+    } 
+</script>
+</html>
