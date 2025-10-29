@@ -53,14 +53,11 @@
             Score.loss=Score.loss+1
         }
         //update score
-        document.getElementById("Score").innerHTML= "Wins:"+Score.Win + " Loss:" + Score.loss 
+        document.getElementById("Score").innerHTML= `Wins: ${Score.Win} Loss: ${Score.loss}`
         //show guesses
-        document.getElementById("Output").innerHTML= "You guessed<b> "+ UserChoice+ "</b>, Computer guessed<b> " + ComputerChoice+ "</b>."
+        document.getElementById("Output").innerHTML= `You guessed<b> ${UserChoice}</b>, Computer guessed<b> ${ComputerChoice}</b>.`
     }
     function ResetScore(){
         Score.Win= 0
         Score.loss= 0
-        document.getElementById("Score").innerHTML= "Wins:"+ Score.Win + " loss:"+ Score.loss
-    } 
-</script>
-</html>
+        document.getElementById("Score").innerHTML= `Wins: ${Score.Win} loss:${Score.loss}`
