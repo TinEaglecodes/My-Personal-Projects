@@ -18,7 +18,7 @@ body.dark-mode {
 }
 header{
     text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     margin-bottom: 30px;
     border-bottom: 1px solid black;
     font-family: "Jaro", sans-serif;
@@ -208,4 +208,5 @@ button{
         width: max-content;
     }
     
+
 }
